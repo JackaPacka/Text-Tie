@@ -1,0 +1,50 @@
+* {
+    --color-lighest: #FBF9F9;
+    --color-light: #8C8E83;
+    --color-accent: #CF832F;
+    --color-darker: #9D6635;
+    --color-darkest: #211527;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    color-scheme: light dark;
+    font-family: 'Rubik', sans-serif;
+
+    color: var(--color-lighest);
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik.ttf');
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--color-darker)
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--color-darker)
+    }
+}
+
+.root-container {
+    padding: 25px;
+    margin: 25px;
+
+    background-color: var(--color-accent);
+    box-shadow: 0 0 30px -10px rgba(0,0,0,0.75);
+
+    border-radius: 25px;
+
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+}

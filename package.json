@@ -2,7 +2,7 @@
   "name": "text-tie",
   "version": "0.1.0",
   "private": true,
-  "main": "public/electron.js",
+  "main": "public/main.js",
   "homepage": "./",
   "dependencies": {
     "@craco/craco": "^7.1.0",

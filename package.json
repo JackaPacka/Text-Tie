@@ -1,5 +1,7 @@
 {
   "name": "Text Tie",
+  "description": "A tool for appending all files at at directory in to a single file.",
+  "author": "Jack Randolph",
   "version": "1.0.0",
   "private": true,
   "main": "public/main.js",
@@ -9,17 +11,18 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "electron-squirrel-startup": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "electron-forge start",
+    "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "craco build",
-    "start": "electron ."
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,12 @@
     ]
   },
   "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
     "electron": "^28.1.0",
     "webpack-node-externals": "^3.0.0"
   }

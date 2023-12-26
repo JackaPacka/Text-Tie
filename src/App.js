@@ -51,7 +51,6 @@ function App() {
         <div>
             <div className={'properties-container'}>
                 <h3>Directory</h3>
-
                 <input
                     type="text"
                     value={directoryPath}
@@ -64,18 +63,16 @@ function App() {
 
             <div className={'properties-container'}>
                 <h3>Extensions</h3>
-
+                <p className={'help-text'}>Comma seperated (Ex: .txt, .md)</p>
                 <input
                     type="text"
                     value={fileExtensions}
                     onChange={(e) => setFileExtensions(e.target.value)}
-                    placeholder="Extension(s) to combine..."
                 />
             </div>
 
             <div className={'properties-container'}>
                 <h3>Export Directory</h3>
-
                 <input
                     type="text"
                     value={exportDirectory}
@@ -87,7 +84,6 @@ function App() {
 
             <div className={'export-container'}>
                 <h3>Export</h3>
-
                 <input
                     type="text"
                     value={exportFileName}

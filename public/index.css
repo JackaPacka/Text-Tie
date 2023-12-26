@@ -1,19 +1,5 @@
-* {
-    --color-lighest: #FBF9F9;
-    --color-light: #8C8E83;
-    --color-accent: #CF832F;
-    --color-darker: #9D6635;
-    --color-darkest: #211527;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-
-    color-scheme: light dark;
-    font-family: 'Rubik', sans-serif;
-
-    color: var(--color-lighest);
+::-webkit-scrollbar {
+    display: none;
 }
 
 @font-face {
@@ -21,30 +7,113 @@ body {
     src: url('Rubik.ttf');
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--color-darker)
-    }
-}
+body {
+    color-scheme: light dark;
+    font-family: 'Rubik', sans-serif;
 
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--color-darker)
-    }
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    overflow: hidden;
 }
 
 .root-container {
-    padding: 25px;
-    margin: 25px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
-    background-color: var(--color-accent);
-    box-shadow: 0 0 30px -10px rgba(0,0,0,0.75);
+    margin: 15px 15px 30px;
+    padding: 0;
 
     border-radius: 25px;
+    background-color: #dedede;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.8);
+}
+
+.properties-container {
+    padding-bottom: 20px;
+    border-bottom: 3px dashed #c0c0c0;
+
+    width: 100%;
+    height: 70px;
+}
+
+.export-container {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+.export-input-extension {
+    position: absolute;
+    right: 85px;
+    bottom: 0;
+
+    border-radius: 25px;
+    border: none;
+
+    height: 30px;
+    padding: 0 10px;
+
+    color: rgba(21, 61, 101, 0.4);
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h3 {
+    padding-left: 20px;
+}
+
+input {
+    position: absolute;
+    right: 80px;
+    left: 20px;
+
+    border-radius: 25px;
+    border: none;
+
+    height: 30px;
+    padding: 0 10px;
+
+    background-color: #c0c0c0;
+    color: #153d65;
+
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+}
+
+input:hover:not(:disabled) {
+    filter: brightness(0.9);
+}
+
+.button {
+    font-size: 30px;
+    background: none;
+    border: none;
 
     position: absolute;
-    top: 5px;
-    bottom: 5px;
-    left: 5px;
-    right: 5px;
+    right: 20px;
+    transform: translateY(-10px);
+}
+
+.button:hover {
+    filter: brightness(0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+
+}
+
+@media (prefers-color-scheme: light) {
+
 }

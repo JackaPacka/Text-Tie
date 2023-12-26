@@ -6,8 +6,7 @@ function App() {
     const [directoryPath, setDirectoryPath] = useState('');
     const [fileExtensions, setFileExtensions] = useState('.md'); // Comma-separated
     const [exportDirectory, setExportDirectory] = useState('');
-    const [exportFileName, setExportFileName] = useState('Tie.txt');
-    const [exportLocation, setExportLocation] = useState('');
+    const [exportFileName, setExportFileName] = useState('My Tied Text');
 
     const selectDirectory = async () => {
         try {
@@ -25,7 +24,6 @@ function App() {
             const path = await ipcRenderer.invoke('open-export-directory-dialog');
             if (path) {
                 setExportDirectory(path);
-                setExportLocation(path); // We only set the path here, not the filename
             }
         } catch (error) {
             console.error('Error selecting export directory:', error);
@@ -34,7 +32,9 @@ function App() {
 
     const buildFile = async () => {
         const extensionsArray = fileExtensions.split(',').map(ext => ext.trim());
-        const fullExportPath = path.join(exportDirectory, exportFileName);
+        let fileName = exportFileName.endsWith('.txt') ? exportFileName : `${exportFileName}.txt`;
+        const fullExportPath = path.join(exportDirectory, fileName);
+
         try {
             const result = await ipcRenderer.invoke('build-file', directoryPath, extensionsArray, fullExportPath);
             if (result.success) {
@@ -49,67 +49,53 @@ function App() {
 
     return (
         <div>
-            <div>
-
+            <div className={'properties-container'}>
                 <h3>Directory</h3>
 
                 <input
                     type="text"
                     value={directoryPath}
                     onChange={(e) => setDirectoryPath(e.target.value)}
-                    placeholder="Path to Directory..."
+                    placeholder="Directory to search..."
                     disabled
                 />
-                <button onClick={selectDirectory}>...</button>
-
+                <button onClick={selectDirectory} className={'button'}>📂</button>
             </div>
 
-            <div>
-
+            <div className={'properties-container'}>
                 <h3>Extensions</h3>
 
                 <input
                     type="text"
                     value={fileExtensions}
                     onChange={(e) => setFileExtensions(e.target.value)}
-                    placeholder="Extensions..."
+                    placeholder="Extension(s) to combine..."
                 />
-
-                <p>The file extensions to combine. Comma seperated. Ex: .md, .cd</p>
-
             </div>
 
-            <div>
+            <div className={'properties-container'}>
+                <h3>Export Directory</h3>
 
                 <input
                     type="text"
                     value={exportDirectory}
-                    placeholder="Export Directory..."
+                    placeholder="Directory to export to..."
                     disabled
                 />
-                <button onClick={selectExportDirectory}>...</button>
-
+                <button onClick={selectExportDirectory} className={'button'}>📂</button>
             </div>
 
-            <div>
-
-                <h3>Export Name</h3>
+            <div className={'export-container'}>
+                <h3>Export</h3>
 
                 <input
                     type="text"
                     value={exportFileName}
                     onChange={(e) => setExportFileName(e.target.value)}
                     placeholder="Export Name..."
+                    style={{ paddingRight: '40px' }}
                 />
-
-                <p>Set the name of the export file.</p>
-
-            </div>
-
-            <div>
-
-                <button onClick={buildFile}>Export</button>
-
+                <button onClick={buildFile} className={'button'}>📤</button>
             </div>
         </div>
     );

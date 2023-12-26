@@ -5,13 +5,15 @@ let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 600,
-        height: 700,
+        width: 400,
+        height: 550,
 
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
-        }
+        },
+
+        resizable: false
     });
 
     mainWindow.removeMenu();

@@ -3,7 +3,7 @@
   "name": "Text Tie",
   "icons": [
     {
-      "src": "img/icon.png",
+      "src": "img/icon.ico",
       "sizes": "256x256",
       "type": "image/png"
     }

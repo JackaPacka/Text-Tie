@@ -1,10 +1,10 @@
 {
-  "name": "Text Tie",
+  "name": "TextTie",
   "description": "A tool for appending all files at at directory in to a single file.",
   "author": "Jack Randolph",
   "version": "1.0.0",
   "private": true,
-  "main": "public/main.js",
+  "main": "build/main.js",
   "homepage": "./",
   "dependencies": {
     "@craco/craco": "^7.1.0",
@@ -18,11 +18,8 @@
   },
   "scripts": {
     "start": "electron-forge start",
-    "build": "craco build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "build": "craco build"
   },
   "eslintConfig": {
     "extends": [

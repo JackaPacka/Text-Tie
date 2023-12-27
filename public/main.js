@@ -7,23 +7,21 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 400,
         height: 550,
-        icon: path.join(__dirname, '../public/img/icon.png'),
-
+        resizable: false,
+        icon: path.join(__dirname, './assets/icon.ico'),
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
         },
-
-        resizable: false
     });
 
     mainWindow.removeMenu();
-    mainWindow.loadFile(path.join(__dirname, "../build/index.html"));
+    mainWindow.loadFile(path.join(__dirname, "./index.html")).then(r => console.log("Done!"));
 }
 
 app.whenReady().then(createWindow);
 
-const fileBuilder = require('../src/fileBuilder.js');
+const fileBuilder = require('./assets/fileBuilder.js');
 
 ipcMain.handle('open-directory-dialog', async (event) => {
     const result = await dialog.showOpenDialog({

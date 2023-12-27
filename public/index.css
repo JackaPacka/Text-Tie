@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Rubik';
-    src: url('Rubik.ttf');
+    src: url('./assets/Rubik.ttf');
 }
 
 ::-webkit-scrollbar {
@@ -62,7 +62,7 @@ body {
 
 .export-input-extension {
     position: absolute;
-    right: 85px;
+    right: 75px;
     bottom: 0;
 
     border-radius: 25px;

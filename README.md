@@ -1,5 +1,7 @@
 # Text Tie
 
+![Text Tie app](https://i.imgur.com/6JtGLyQ.png)
+
 A tool that appends all text in a directory into a single text file. 
 Great for making CustomGPT knowledge files.
 
@@ -22,7 +24,3 @@ Great for making CustomGPT knowledge files.
 4. Optionally, you can set the name of the outputted file (Named My Tied Text by default).
 
 This will create a .txt file with all the text from the directory you specified.
-
----
-
-![Text Tie app](https://imgur.com/6JtGLyQ)

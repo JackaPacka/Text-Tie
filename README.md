@@ -25,4 +25,4 @@ This will create a .txt file with all the text from the directory you specified.
 
 ---
 
-![Text tie app](https://imgur.com/a/hX8eEGy)
+![Text Tie app](https://imgur.com/6JtGLyQ)
